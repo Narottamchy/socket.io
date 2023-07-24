@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Socket</title>
+    <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+</head>
+<body>
+Hello world</body>
+<script>
+    const socket = io();
+    // using custom endpoint
+    // const socket = io('/custom');
+    // socket.on('message',(data)=>{
+    //     document.write(data)
+    // })
+
+    // ye sb purana hai ab tk
+    // socket.emit('narc',"bhejde ye text client se")
+    // socket.on('customevent',(data)=>{
+    //     document.body.innerHTML='';
+    //     document.write(data.message);
+    // })
+
+    // room on the client side
+    socket.on('connectedRoom',(data)=>{
+        document.body.innerHTML='';
+        document.write(data);
+    })
+
+    // erron handling socket mai mainly client side hi hoti hai here are some of the example
+    // socket.on('connect_failed',()=>{
+    //     alert("sorry your connection faild")
+    // })
+    // socket.on('reconnect_failed',()=>{
+    //     alert("sorry reconnection faild")
+    // })
+    // socket.on('error',()=>{
+    //     alert("some error occur aah")
+    // })
+
+</script>
+</html>
